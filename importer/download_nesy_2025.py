@@ -10,7 +10,7 @@ import openreview
 
 # Needs to be modified based on the conference
 CONFERENCE_NAME = 'nesy25'
-CONFERENCE_INVITATION = 'nesyconf.org/NeSy/2025/Conference_Phase_2'
+CONFERENCE_INVITATION = 'nesyconf.org/NeSy/2025/Conference_Phase_2/-/Submission' # Keep this pattern - I tried other variations which didn't work
 VENUE = "NeSy 2025"
 
 
@@ -44,6 +44,9 @@ if __name__ == '__main__':
     # Retrieves the meta data.
     submissions = openreview.tools.iterget_notes(
         client, invitation=CONFERENCE_INVITATION)
+    for submission in submissions:
+        print(submission)
+        break
     submissions_by_forum = {n.forum: n for n in submissions}
     metadata = []
     for forum in submissions_by_forum:
