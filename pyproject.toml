@@ -1,0 +1,10 @@
+[project]
+name = "v284"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "openreview-py>=1.51.2",
+    "tqdm>=4.67.1",
+]
