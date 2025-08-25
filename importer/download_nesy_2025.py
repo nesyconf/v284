@@ -10,9 +10,17 @@ import openreview
 
 # Needs to be modified based on the conference
 CONFERENCE_NAME = 'nesy25'
-CONFERENCE_INVITATION = 'nesyconf.org/NeSy/2025/Conference_Phase_2/-/Submission' # Keep this pattern - I tried other variations which didn't work
+CONFERENCE_INVITATION_1 = 'nesyconf.org/NeSy/2025/Conference_Phase_2/-/Submission'  
+CONFERENCE_INVITATION_2 = 'nesyconf.org/NeSy/2025/Conference/-/Submission'
 VENUE = "NeSy 2025"
 
+
+def merge_submissions(submissions_by_forum, submissions):
+    submissions_by_forum_new = {n.forum: n for n in submissions}
+    for forum in submissions_by_forum_new:
+        if forum not in submissions_by_forum:
+            submissions_by_forum[forum] = submissions_by_forum_new[forum]
+    return submissions_by_forum
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -32,8 +40,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     outdir = args.outdir
-    print(args.password)
-    print(args.username)
 
     # Initiates the OpenReview client.
     client = openreview.api.OpenReviewClient(
@@ -42,23 +48,32 @@ if __name__ == '__main__':
         password=args.password)
 
     # Retrieves the meta data.
-    submissions = openreview.tools.iterget_notes(
-        client, invitation=CONFERENCE_INVITATION)
-    for submission in submissions:
-        print(submission)
-        break
+    submissions = client.get_notes(
+        invitation=CONFERENCE_INVITATION_1,
+    )
+
     submissions_by_forum = {n.forum: n for n in submissions}
+    submissions_by_forum = merge_submissions(submissions_by_forum, client.get_notes(
+        invitation=CONFERENCE_INVITATION_2,
+    ))
     metadata = []
     for forum in submissions_by_forum:
-        submission_content = submissions_by_forum[forum].content
+        submission_content = {} 
+        
+        # Ignore the "readers" key which is on every field
+        for key, value in submissions_by_forum[forum].content.items():
+            submission_content[key] = value["value"]
+
         forum_metadata = {
             'forum': forum,
             'submission_content': submission_content
         }
-        # only keeps the accepted papers
-        venue = submission_content['venue']
-        if venue in ['CoRL 2023 Poster', 'CoRL 2023 Oral']:
-            metadata.append(forum_metadata)
+        # only keeps the accepted papers, which are invited to camera ready
+        invitations = submissions_by_forum[forum].invitations
+        for invitation in invitations:
+            if "Camera_Ready" in invitation:
+                metadata.append(forum_metadata)
+                break
 
     outdir = os.path.join(outdir, CONFERENCE_NAME)
     if not os.path.exists(outdir):
@@ -72,8 +87,10 @@ if __name__ == '__main__':
             forum = forum_metadata['forum']
             submission_content = forum_metadata['submission_content']
             title = submission_content['title']
-            venue = submission_content['venue'].replace('CoRL 2023 ', '')
-            print('{}\t{}\t{}\thttps://openreview.net/forum?id={}'.format(k, title, venue, forum))
+            venue = submission_content['venue']
+            link = f"https://openreview.net/forum?id={forum}"
+            submission_content['link'] = link
+            print('{}\t{}\t{}\t{}'.format(k, title, venue, link))
             file_handle.write(json.dumps(forum_metadata) + '\n')
 
 
