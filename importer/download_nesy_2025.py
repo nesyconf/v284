@@ -70,6 +70,7 @@ if __name__ == '__main__':
         }
         # only keeps the accepted papers, which are invited to camera ready
         invitations = submissions_by_forum[forum].invitations
+
         for invitation in invitations:
             if "Camera_Ready" in invitation:
                 metadata.append(forum_metadata)
@@ -103,44 +104,48 @@ if __name__ == '__main__':
             with open(pdf_outfile, 'wb') as file_handle:
                 file_handle.write(pdf_binary)
 
-    # Downloads the supplementary materials.
-    if args.get_supplementary:
-        for forum_metadata in tqdm(metadata, desc='getting supplementary materials'):
-            try:
-                supplementary_binary = client.get_attachment(forum_metadata['forum'], 'supplementary_material')
-                supplementary_outfile = os.path.join(outdir, '{}_supp.zip'.format(forum_metadata['forum']))
-                print("downloading {}".format(supplementary_outfile))
-                with open(supplementary_outfile, 'wb') as file_handle:
-                    file_handle.write(supplementary_binary)
-            except openreview.OpenReviewException:
-                print("{} not found".format(supplementary_outfile))
-                print("Check {}".format(forum_metadata['submission_content']['_bibtex']))
+    # # Downloads the supplementary materials.
+    # if args.get_supplementary:
+    #     for forum_metadata in tqdm(metadata, desc='getting supplementary materials'):
+    #         try:
+    #             supplementary_binary = client.get_attachment(forum_metadata['forum'], 'supplementary_material')
+    #             supplementary_outfile = os.path.join(outdir, '{}_supp.zip'.format(forum_metadata['forum']))
+    #             print("downloading {}".format(supplementary_outfile))
+    #             with open(supplementary_outfile, 'wb') as file_handle:
+    #                 file_handle.write(supplementary_binary)
+    #         except openreview.OpenReviewException as e:
+    #             print("{} not found".format(supplementary_outfile))
+    #             print("Check {}".format(forum_metadata['submission_content']['_bibtex']))
 
     # Downloads the agreements.
     if args.get_agreement:
         for forum_metadata in tqdm(metadata, desc='getting publication agreements'):
             # print(json.dumps(forum_metadata, indent=2))
+            agreement_outfile = None
             try:
-                agreement_binary = client.get_attachment(forum_metadata['forum'], 'publication_agreement')
+                agreement_binary = client.get_attachment(id=forum_metadata['forum'], field_name="publication_agreement")
+                # agreement_binary = client.get_pdf(forum_metadata[])
                 agreement_outfile = os.path.join(outdir, '{}_agreement.pdf'.format(forum_metadata['forum']))
                 print("downloading {}".format(agreement_outfile))
                 with open(agreement_outfile, 'wb') as file_handle:
                     file_handle.write(agreement_binary)
-            except openreview.OpenReviewException:
+            except openreview.OpenReviewException as e:
+                print(e)
                 print("{} not found".format(agreement_outfile))
-                print("Check {}".format(forum_metadata['submission_content']['_bibtex']))
+                
+                print("Check {}, paper type {}, invitation {}".format(forum_metadata['submission_content']['title'], forum_metadata['submission_content']['paper_type'], forum_metadata['submission_content']['venue']))
 
-    # Downloads the poster spotlights.
-    if args.get_spotlight:
-        for forum_metadata in tqdm(metadata, desc='getting poster spotlights'):
-            venue = forum_metadata['submission_content']['venue']
-            if venue not in ['CoRL 2023 Poster']: continue
-            try:
-                spotlight_binary = client.get_attachment(forum_metadata['forum'], 'poster_spotlight_video')
-                spotlight_outfile = os.path.join(outdir, '{}_spotlight.mp4'.format(forum_metadata['forum']))
-                print("downloading {}".format(spotlight_outfile))
-                with open(spotlight_outfile, 'wb') as file_handle:
-                    file_handle.write(spotlight_binary)
-            except openreview.OpenReviewException:
-                print("{} not found".format(spotlight_outfile))
-                print("Check {}".format(forum_metadata['submission_content']['_bibtex']))
+    # # Downloads the poster spotlights.
+    # if args.get_spotlight:
+    #     for forum_metadata in tqdm(metadata, desc='getting poster spotlights'):
+    #         venue = forum_metadata['submission_content']['venue']
+    #         if venue not in ['CoRL 2023 Poster']: continue
+    #         try:
+    #             spotlight_binary = client.get_attachment(forum_metadata['forum'], 'poster_spotlight_video')
+    #             spotlight_outfile = os.path.join(outdir, '{}_spotlight.mp4'.format(forum_metadata['forum']))
+    #             print("downloading {}".format(spotlight_outfile))
+    #             with open(spotlight_outfile, 'wb') as file_handle:
+    #                 file_handle.write(spotlight_binary)
+    #         except openreview.OpenReviewException:
+    #             print("{} not found".format(spotlight_outfile))
+    #             print("Check {}".format(forum_metadata['submission_content']['_bibtex']))
