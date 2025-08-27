@@ -9,20 +9,21 @@ CONFERENCE_NAME = 'nesy25'
 ORAL_PAPER_IDS = [
     # "VH6WIPF4Sj",
 ]
+VOLUME = '284'
 
 # Customizes the header of the bibtex based on your conference information.
 def write_proceeding_info():
-    bibtex_str = '@Proceedings{CoRL-2023,\n'
-    bibtex_str += '\tbooktitle = {Proceedings of The 19th Conference on Neurosymbolic Learning and Reasoning},\n'
+    bibtex_str = '@Proceedings{NeSy-2025,\n'
+    bibtex_str += '\tbooktitle = {Proceedings of The 19th International Conference on Neurosymbolic Learning and Reasoning},\n'
     bibtex_str += '\tname = {Conference on Neurosymbolic Learning and Reasoning},\n'
-    bibtex_str += '\tshortname = {NeSy},\n'
+    bibtex_str += '\tshortname = {NeSy 2025},\n'
     bibtex_str += '\teditor = {H. Gilpin, Leilani and Giunchiglia, Eleonora and Hitzler, Pascal and van Krieken, Emile},\n'
-    bibtex_str += '\tvolume = {284},\n'
-    bibtex_str += '\tyear = {2023},\n'
+    bibtex_str += '\tvolume = {' + VOLUME + '},\n'
+    bibtex_str += '\tyear = {2025},\n'
     bibtex_str += '\tstart = {2025-09-08},\n'
-    bibtex_str += '\tend = {2023-09-10},\n'
+    bibtex_str += '\tend = {2025-09-10},\n'
     bibtex_str += '\tconference_url = {https://2025.nesyconf.org/},\n'
-    bibtex_str += '\taddress = {Atlanta, USA},\n'
+    bibtex_str += '\taddress = {UC Santa Cruz, Santa Cruz, CA, USA},\n'
     bibtex_str += '\tconference_number={19},\n'
     bibtex_str += '}\n\n'
     return bibtex_str
@@ -58,12 +59,15 @@ def get_pdf_page_length(pdf_file_name):
 
 def create_paper_bibtex(indir, outdir, identifier, metadata, is_poster, page_start=1):
     '''Creates a bibtex entry for one paper.'''
-    title = metadata['submission_content']['title']
-    abstract = metadata['submission_content']['abstract']
+    submission_content = metadata['submission_content']
+    if submission_content['paper_type'] in ['Industry Abstract', 'Extended Abstract']:
+        return "", page_start
+    title = submission_content['title']
+    abstract = submission_content['abstract']
     paper_length = get_pdf_page_length(os.path.join(indir, metadata['forum']+'.pdf'))
-    authors = metadata['submission_content']['authors']
+    authors = submission_content['authors']
     openreview = metadata['forum']
-    bibtex_str = serialize_to_bibtex(identifier, title, abstract, authors, page_start, paper_length, openreview, is_poster)
+    bibtex_str = serialize_to_bibtex(identifier, title, abstract, authors, page_start, paper_length, openreview, is_poster, submission_content)
     rename_files(indir, outdir, metadata, identifier)
     return bibtex_str, page_start + paper_length
 
@@ -97,7 +101,13 @@ def rename_files(indir, outdir, metadata, bibtex_str):
         print('rename supp: {}->{}'.format(supplementary_name, new_supp_name))
         shutil.copyfile(os.path.join(src_folder, supplementary_name), os.path.join(dest_folder, new_supp_name))
 
-def serialize_to_bibtex(identifier, title, abstract, authors, page_start, paper_length, openreview, is_poster):
+    if 'publication_agreement' in metadata['submission_content'].keys() and metadata['submission_content']['publication_agreement'] != "":
+        pdf_name_in = metadata['forum'] + "_agreement.pdf"
+        shutil.copyfile(os.path.join(src_folder, pdf_name_in), os.path.join(dest_folder, f'v{VOLUME}permissions', bibtex_str + 'Permission.pdf'))
+    else:
+        print("WARNING: No publication agreement found for {}".format(bibtex_str))
+
+def serialize_to_bibtex(identifier, title, abstract, authors, page_start, paper_length, openreview, is_poster, submission_content):
     bibtex_str = '@InProceedings{'
     bibtex_str += identifier + ',\n'
     bibtex_str += '\ttitle = {' + title + '},\n'
@@ -105,6 +115,8 @@ def serialize_to_bibtex(identifier, title, abstract, authors, page_start, paper_
         bibtex_str += '\tsection = {Poster},\n'
     else:
         bibtex_str += '\tsection = {Oral},\n'
+    if 'software' in submission_content.keys() and submission_content['software'] != "":
+        bibtex_str += '\tsoftware = {' + submission_content['software'] + '},\n'
     bibtex_str += '\tauthor = {' + format_author_names(authors) + '},\n'
     bibtex_str += '\tpages = {' + str(page_start) + '-' + str(page_start + paper_length - 1) + '},\n'
     bibtex_str += '\topenreview = {' + openreview + '},\n'
@@ -153,6 +165,8 @@ if __name__ == '__main__':
     if not os.path.exists(outdir):
         os.makedirs(outdir) 
 
+    os.makedirs(os.path.join(outdir, f'v{VOLUME}permissions'), exist_ok=True)
+
     # Reads metadata and construct identifiers. Split them into the oral and poster sections.
     page_start = 1
     metadata = read_paper_metadata(os.path.join(indir, CONFERENCE_NAME + '__metadata.jsonl'))
@@ -160,7 +174,7 @@ if __name__ == '__main__':
     oral_metadata, poster_metadata, oral_identifiers, poster_identifiers = split_metadata_and_identifiers(metadata, identifiers)
 
     # Writes the bibtex into the file, and rename the files into identifier.pdf or identifier-supp.zip.
-    with open(os.path.join(indir, CONFERENCE_NAME + '.bib'), 'w') as f:
+    with open(os.path.join(outdir, CONFERENCE_NAME + '.bib'), 'w') as f:
         bibtex = write_proceeding_info()
         f.write(bibtex)
         for identifier, metadata in zip(oral_identifiers, oral_metadata):
