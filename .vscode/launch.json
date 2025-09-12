@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Debug NeSy downloader",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "importer/download_nesy_2025.py",
+            "console": "integratedTerminal",
+            "args": ["--get_agreement", "--get_pdfs", "--username=emilevankrieken@live.nl", "--password=m8iQ$tMN*&iNEKn@2Sq6"]
+        }
+    ]
+}
