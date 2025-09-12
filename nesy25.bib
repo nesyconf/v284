@@ -1,0 +1,625 @@
+@Proceedings{NeSy-2025,
+	booktitle = {Proceedings of The 19th International Conference on Neurosymbolic Learning and Reasoning},
+	name = {Conference on Neurosymbolic Learning and Reasoning},
+	shortname = {NeSy 2025},
+	editor = {H. Gilpin, Leilani and Giunchiglia, Eleonora and Hitzler, Pascal and van Krieken, Emile},
+	volume = {284},
+	year = {2025},
+	start = {2025-09-08},
+	end = {2025-09-10},
+	conference_url = {https://2025.nesyconf.org/},
+	address = {UC Santa Cruz, Santa Cruz, CA, USA},
+	conference_number={19},
+}
+
+@InProceedings{weil23,
+	title = {Adapting Graph-Based Analysis for Knowledge Extraction from Transformer Models},
+	section = {Poster},
+	author = {Weil, Alexandre Monnier and Horta, Vitor A. C. and Qadeer, Hamza and Mileo, Alessandra},
+	pages = {1-14},
+	openreview = {xrSYOIdrPz},
+	abstract = {Transformer models, despite their exceptional capabilities in Natural Language Processing (NLP) and Vision tasks, like deep neural network models, often function as "black boxes" as their internal processes remain largely opaque due to their complex architectures. This work extends graph-based knowledge extraction techniques, previously applied to CNNs, to the domain of Transformer models.
+The inner mechanics of Transformer models are explored by constructing a co-activation graph from their encoder layers. The nodes of the graph represent the hidden unit within each encoder layer, while the edges represent the statistical correlations between these hidden units. The magnitude of co-activation, which is the correlation between activations of two hidden units, determines the strength of their connection within the graph.
+Our research is focused on encoder-only Transformer classifiers. We conducted experiments involving a custom-built Transformer and a pre-trained BERT model for an NLP task. We used graph analysis to detect semantically related class clusters and their impact on misclassification patterns. We demonstrate a positive correlation between class similarity and the frequency of classification errors.  Our findings suggest that co-activation graphs reveal structured, interpretable representations in Transformers, consistent with prior CNN findings on knowledge extraction.}
+}
+
+@InProceedings{pelletreau-duris23,
+	title = {Do Graph Neural Network States Contain Graph Properties?},
+	section = {Poster},
+	software = {https://github.com/TomPelletreauDuris/Probing-GNN-representations},
+	author = {Pelletreau-Duris, Tom and Bakel, Ruud van and Cochez, Michael},
+	pages = {15-51},
+	openreview = {KZgFHRwNhf},
+	abstract = {Deep neural networks (DNNs) achieve state-of-the-art performance on many tasks, but this often requires increasingly larger model sizes, which in turn leads to more complex internal representations. Explainability techniques (XAI) have made remarkable progress in the interpretability of ML models. However, the non-euclidean nature of Graph Neural Networks (GNNs) makes it difficult to reuse already existing XAI methods. While other works have focused on instance-based explanation methods for GNNs, very few have investigated model-based methods and, to our knowledge, none have tried to probe the embedding of the GNNs for structural graph properties. In this paper we present a model agnostic explainability pipeline for Graph Neural Networks (GNNs) employing diagnostic classifiers. We propose to consider graph-theoretic properties as the features of choice for studying the emergence of representations in GNNs. This pipeline aims to probe and interpret the learned representations in GNNs across various architectures and datasets, refining our understanding and trust in these models.}
+}
+
+@InProceedings{manginas23,
+	title = {A Scalable Approach to Probabilistic Neuro-Symbolic Robustness Verification},
+	section = {Poster},
+	software = {https://github.com/EVENFLOW-project-EU/nesy-veri},
+	author = {Manginas, Vasileios and Manginas, Nikolaos and Stevinson, Edward and Varghese, Sherwin and Katzouris, Nikos and Paliouras, Georgios and Lomuscio, Alessio},
+	pages = {52-69},
+	openreview = {DAp8WCTGVj},
+	abstract = {Neuro-Symbolic Artificial Intelligence (NeSy AI) has emerged as a promising direction for integrating neural learning with symbolic reasoning. Typically, in the probabilistic variant of such systems, a neural network first extracts a set of symbols from sub-symbolic input, which are then used by a symbolic component to reason in a probabilistic manner towards answering a query. In this work, we address the problem of formally verifying the robustness of such NeSy probabilistic reasoning systems, therefore paving the way for their safe deployment in critical domains. We analyze the complexity of solving this problem exactly, and show that a decision version of the core computation is $\mathrm{NP}^{\mathrm{PP}}$-complete. In the face of this result, we propose the first approach for approximate, relaxation-based verification of probabilistic NeSy systems. We demonstrate experimentally on a standard NeSy benchmark that the proposed method scales exponentially better than solver-based solutions and apply our technique to a real-world autonomous driving domain, where we verify a safety property under large input dimensionalities.}
+}
+
+@InProceedings{amador23,
+	title = {SymDQN: Symbolic Knowledge and Reasoning in Neural Network-based Reinforcement Learning},
+	section = {Poster},
+	software = {https://github.com/IvoAA/SymDQN.git},
+	author = {Amador, Ivo and Gierasimczuk, Nina},
+	pages = {70-85},
+	openreview = {ncEGGRYska},
+	abstract = {We propose a learning architecture that allows symbolic control and guidance in reinforcement learning with deep neural networks. We introduce SymDQN, a novel modular approach that augments the existing Dueling Deep Q-Networks (DuelDQN) architecture with modules based on the neuro-symbolic framework of Logic Tensor Networks (LTNs). The modules guide action policy learning and allow reinforcement learning agents to display behavior consistent with reasoning about the environment. Our experiment is an ablation study performed on the modules. It is conducted in a reinforcement learning environment of a 5x5 grid navigated by an agent that encounters various shapes, each associated with a given reward. The underlying DuelDQN attempts to learn the optimal behavior of the agent in this environment, while the modules facilitate shape recognition and reward prediction. We show that our architecture significantly improves learning, both in terms of performance and the precision of the agent. The modularity of SymDQN allows reflecting on the intricacies and complexities of combining neural and symbolic approaches in reinforcement learning.}
+}
+
+@InProceedings{dave23,
+	title = {Bridging Neural and Symbolic Computation: A Learnability Study of RNNs on Counter and Dyck Languages},
+	section = {Poster},
+	author = {Dave, Neisarg and Kifer, Daniel and Giles, C. Lee and Mali, Ankur},
+	pages = {86-115},
+	openreview = {0ALxF79u73},
+	abstract = {This work presents a neuro-symbolic analysis of the learnability of Recurrent Neural Networks (RNNs) in classifying structured formal languages—specifically, **counter languages** and **Dyck languages**, which serve as canonical examples of context-free and mildly context-sensitive grammars. While prior studies have highlighted the expressive power of first-order (LSTM) and second-order (O2RNN) architectures within the Chomsky hierarchy, we challenge this perspective by shifting the focus from theoretical expressivity to *practical learnability under finite precision constraints*. Our results suggest that RNNs function more as finite-state machines than stack-based automata when implemented with realistic training regimes and embedding representations. We show that classification performance degrades sharply as structural similarities between positive and negative sequences increase—highlighting a core limitation in the RNN's ability to internalize hierarchical structure without symbolic scaffolding. Interestingly, even simple linear classifiers built on top of RNN-derived embeddings outperform chance, underscoring the hidden representational capacity within learned states. To probe generalization, we train models on input lengths up to 40 and evaluate on lengths extending to 500, using 10 distinct seeds to measure statistical robustness. O2RNNs consistently demonstrate greater stability and generalization compared to LSTMs, particularly under varied initialization strategies. These findings expose the fragility of learned language representations and emphasize the role of architectural bias, initialization, and data sampling in determining what is truly learnable. Ultimately, our study reframes RNN learnability through the lens of *symbolic structure and computational constraints*, advocating for stronger formal criteria when assessing neural models’ capacity to reason over structured sequences. We argue that expressivity alone is insufficient—**stability, precision, and symbolic alignment** are essential for true neuro-symbolic generalization.}
+}
+
+@InProceedings{zhang23,
+	title = {High Quality Embeddings for Horn Logic Reasoning},
+	section = {Poster},
+	author = {Zhang, Yifan and White, Yasir and Clark, Dean and Sanchez, Joseph and Lipsey, Jevon and Hirst, Ashely and Heflin, Jeff},
+	pages = {116-129},
+	openreview = {QeZuGranYJ},
+	abstract = {Neural networks can be trained to rank the choices made by logical reasoners, resulting in more efficient searches for answers. A key step in this process is creating useful embeddings, i.e., numeric representations of logical statements. This paper introduces and evaluates
+several approaches to creating embeddings that result in better downstream results. We train embeddings using triplet loss, which requires examples consisting of an anchor, a positive example, and a negative example. We introduce three ideas: generating anchors that are more likely to have repeated terms, generating positive and negative examples in a way that ensures a good balance between easy, medium, and hard examples, and periodically emphasizing the hardest examples during training. We conduct several experiments to evaluate this approach, including a comparison of different embeddings across different knowledge bases, in an attempt to identify what characteristics make an embedding well-suited to a particular reasoning task.}
+}
+
+@InProceedings{thompson23,
+	title = {Grounding Terms from an Ontology for use in Autoformalization: Tokenization is All You Need},
+	section = {Poster},
+	software = {https://github.com/ontologyportal},
+	author = {Thompson, Richard and Pease, Adam and Kölsch, Mathias and Toutsios, Angelos},
+	pages = {130-136},
+	openreview = {oDygYsPhS8},
+	abstract = {Large Language Models (LLMs) have shown strong performance in translating natural
+language into programming languages like Python or Java. However, for niche computer
+languages, where there is limited training data, fine-tuning a base model is often necessary.
+A key challenge arises when the pretrained embeddings of natural language terms interfere
+with the intended syntax and semantics of formal language terms. This issue is especially
+pronounced in the logical language of SUO-KIF, which is used in the Suggested Upper
+Merged Ontology (SUMO). SUMO contains thousands of terms that closely resemble everyday
+English words. As a result, models often produce syntactic errors or hallucinate
+non-existent terms due to conflicting embeddings learned during base training.
+This work introduces a tokenization-based technique to mitigate these issues. By altering
+how formal terms are tokenized, we can decouple their embeddings from similar
+natural language words, significantly reducing syntax errors and term hallucinations in the
+generated formal language output.}
+}
+
+@InProceedings{mamidala23,
+	title = {Rethinking Reasoning in LLMs: Neuro-Symbolic Local RetoMaton Beyond CoT and ICL},
+	section = {Poster},
+	author = {Mamidala, Rushitha Santhoshi and Chhabra, Anshuman and Mali, Ankur},
+	pages = {137-159},
+	openreview = {ySTqCi3nqi},
+	abstract = {Prompt-based reasoning strategies such as Chain-of-Thought (CoT) and In-Context Learning (ICL) have become widely used for eliciting reasoning capabilities in Large Language Models (LLMs). However, these methods rely on fragile, implicit mechanisms often yielding inconsistent outputs across seeds, formats, or minor prompt variations making them fundamentally unreliable for tasks requiring stable, interpretable reasoning. In contrast, automata-based neuro-symbolic frameworks like RetoMaton offer a more structured and trustworthy alternative by grounding retrieval in symbolic memory with deterministic transitions. In this work, we extend RetoMaton by replacing its global datastore with a local, task-adaptive Weighted Finite Automaton (WFA), constructed directly from external domain corpora. This local automaton structure promotes robust, context-aware retrieval while preserving symbolic traceability and low inference overhead. Unlike prompting, which entangles context and memory in opaque ways, our approach leverages the explicit structure of WFAs to provide verifiable and modular retrieval behavior, making it better suited for domain transfer and interoperability. We evaluate this local RetoMaton variant on two pretrained LLMs LLaMA-3.2-1B and Gemma-3-1B-PT across three reasoning tasks: TriviaQA (reading comprehension), GSM8K (multi-step math), and MMLU (domain knowledge). Compared to the base model and prompting-based methods, augmenting these setups with local RetoMaton consistently improves performance while enabling transparent and reproducible retrieval dynamics. Our results highlight a promising shift toward trustworthy, symbolic reasoning in modern LLMs via lightweight, automaton-guided memory.}
+}
+
+@InProceedings{barua23,
+	title = {Description Logic Concept Learning using Large Language Models},
+	section = {Poster},
+	software = {https://github.com/AdritaBarua/DL-learner-using-LLMs/tree/main},
+	author = {Barua, Adrita and Hitzler, Pascal},
+	pages = {160-178},
+	openreview = {ebVC7S5VMF},
+	abstract = {Recent advances in Large Language Models (LLMs) have drawn interest in their capacity for logical reasoning, an area traditionally dominated by symbolic systems that rely on complete, manually curated knowledge bases represented in formal languages. This paper introduces a framework that leverages pretrained LLMs to generate Description Logic (DL) class expressions from instance-level examples and background knowledge, translated to natural language. The baseline is Concept Induction, a symbolic learning approach that is mostly based on formal logical reasoning over a DL theory. Drawing inspiration from the DL-Learner architecture, our approach replaces traditional symbolic methods with LLM-based models to generate DL class expressions from instance-level data. 
+
+We evaluate our approach using three benchmark ontologies across two LLMs: gpt-4o and o3-mini. We use a symbolic reasoner, Pellet, to verify the LLM-generated results and incorporate the reasoner’s feedback into our pipeline to ensure logical consistency, thereby generating a hybrid neurosymbolic system. By introducing controlled variations to the background knowledge, we assess the models’ reliance on commonsense versus formal reasoning. Results show that o3-mini achieves near-perfect accuracy across settings, albeit with longer runtime. These findings demonstrate that LLMs have the potential to serve as scalable and flexible DL learners when coupled in a hybrid neurosymbolic setting, offering a promising alternative to symbolic approaches—particularly in contexts where high-quality ontologies are incomplete or unavailable.}
+}
+
+@InProceedings{sinha23,
+	title = {Toward a Clearer Characterization of Neuro-Symbolic Frameworks: A Brief Comparative Analysis},
+	section = {Poster},
+	author = {Sinha, Sania and Premsri, Tanawan and Kordjamshidi, Parisa},
+	pages = {179-217},
+	openreview = {psXDX4Q8E5},
+	abstract = {Neurosymbolic (NeSy) frameworks combine neural representations and learning with symbolic representations and reasoning. Combining the reasoning capacities, explainability, and interpretability of symbolic processing with the flexibility and power of neural computing allows us to solve complex problems with more reliability while being data-efficient. However, this recently growing topic poses a challenge to developers with its learning curve, lack of user-friendly tools, libraries, and unifying frameworks. In this paper, we characterize the technical facets of existing NeSy frameworks, such as the symbolic representation language, integration with neural models, and the underlying algorithms. A majority of the NeSy research focuses on algorithms instead of providing generic frameworks for declarative problem specification to leverage  problem solving. To highlight the key aspects of Neurosymbolic modeling, we showcase three generic NeSy frameworks - $\textit{DeepProbLog}$, $\textit{Scallop}$, and $\textit{DomiKnowS}$. We identify the challenges within each facet that lay the foundation for identifying the expressivity of each framework in solving a variety of problems. Building on this foundation, we aim to spark transformative action and encourage the community to rethink this problem in novel ways.}
+}
+
+@InProceedings{carzaniga23,
+	title = {Practical Lessons on Vector-Symbolic Architectures in Deep Learning-Inspired Environments},
+	section = {Poster},
+	author = {Carzaniga, Francesco S. and Hersche, Michael and Schindler, Kaspar and Rahimi, Abbas},
+	pages = {218-236},
+	openreview = {5ZmvZkqyoy},
+	abstract = {Neural networks have shown unprecedented capabilities, rivaling human performance in many tasks. However, current neural architectures are not capable of symbolic manipulation, which is thought to be a hallmark of human intelligence. Vector-symbolic architectures (VSAs) promise to bring this ability through simple vector manipulation, highly amenable to current and emerging hardware and software stacks built for their neural counterparts. Integrating the two models into the paradigm of neuro-vector-symbolic architectures may achieve even more human-like performance. However, despite ongoing efforts, there are no clear guidelines on the deployment of VSA in deep learning-based training situations. In this work, we aim to begin providing such guidelines by offering four practical lessons we have observed through the analysis of many VSA models and implementations. We provide thorough benchmarks and results that corroborate such lessons. First, we observe that Multiply-add-permute (MAP) and Hadamard linear binding (HLB) are up to 3-4$\times$ faster than holographic reduced representations (HRR), even when the latter is equipped with optimized FFT-based convolutions. Second, we propose further speed improvements by replacing similarity search with a linear readout, with no effect on retrieval. Third, we analyze the retrieval performance of MAP, HRR and HLB in a noise-free and noisy scenario to simulate processing by a neural network, and show that they are equivalent. Finally, we implement a hierarchical multi-level composition scheme, with notable benefits to the flexibility of integration of VSAs inside existing neural architectures. Overall, we show that these four lessons lead to faster and more effective deployment of VSA.}
+}
+
+@InProceedings{ribeiro23,
+	title = {Concept Probing: Where to Find Human-Defined Concepts},
+	section = {Poster},
+	author = {Ribeiro, Manuel de Sousa and Leote, Afonso and Leite, Joao},
+	pages = {237-251},
+	openreview = {LSe4snLk8X},
+	abstract = {Concept probing has recently gained popularity as a way for humans to peek into what is encoded within artificial neural networks. In concept probing, additional classifiers are trained to map the internal representations of a model into human-defined concepts of interest. However, the performance of these probes is highly dependent on the internal representations they probe from, making identifying the appropriate layer to probe an essential task. In this paper, we propose a method to automatically identify which layer's representations in a neural network model should be considered when probing for a given human-defined concept of interest, based on how informative and regular the representations are with respect to the concept. We validate our findings through an exhaustive empirical analysis over different neural network models and datasets.}
+}
+
+@InProceedings{andreoni23,
+	title = {T-ILR: a Neurosymbolic Integration for LTLf},
+	section = {Poster},
+	author = {Andreoni, Riccardo and Buliga, Andrei and Daniele, Alessandro and Ghidini, Chiara and Montali, Marco and Ronzani, Massimiliano},
+	pages = {252-265},
+	openreview = {TI0aaA9Nfa},
+	abstract = {State-of-the-art approaches for integrating symbolic knowledge with deep learning architectures have demonstrated promising results in static domains. However, methods to handle temporal logic specifications remain underexplored. The only existing approach relies on an explicit representation of a finite-state automaton corresponding to the temporal specification. Instead, we aim at directly injecting the temporal knowledge into the neural model without having to rely on a separate symbolic structure. Specifically, we propose a neurosymbolic framework designed to incorporate temporal logic specifications, expressed in Linear Temporal Logic over finite traces (LTLf), directly into deep learning architectures for sequence-based tasks. We extend the Iterative Local Refinement (ILR) neurosymbolic algorithm, leveraging the recent introduction of fuzzy LTLf interpretations. We name this proposed method Temporal Iterative Local Refinement (T-ILR). We assess T-ILR on an existing benchmark for temporal neurosymbolic architectures, consisting of the classification of image sequences in the presence of temporal knowledge. The results demonstrate improved accuracy and computational efficiency compared to the state-of-the-art method.}
+}
+
+@InProceedings{baheri23,
+	title = {Hierarchical Neuro-Symbolic Decision Transformer},
+	section = {Poster},
+	author = {Baheri, Ali and Alm, Cecilia},
+	pages = {266-284},
+	openreview = {tXOU6EULup},
+	abstract = {We present a hierarchical neuro-symbolic control framework that couples a classical symbolic planner with a transformer-based policy to address long-horizon decision-making under uncertainty. At the high level, the planner assembles an interpretable sequence of operators that guarantees logical coherence with task constraints, while at the low level each operator is rendered as a sub-goal token that conditions a decision transformer to generate fine-grained actions directly from raw observations. This bidirectional interface preserves the combinatorial efficiency and explainability of symbolic reasoning without sacrificing the adaptability of deep sequence models, and it permits a principled analysis that tracks how approximation errors from both planning and execution accumulate across the hierarchy. Empirical studies in stochastic grid-world domains demonstrate that the proposed method consistently surpasses purely symbolic, purely neural, and existing hierarchical baselines in both success and efficiency, highlighting its robustness for sequential tasks.}
+}
+
+@InProceedings{krieken23,
+	title = {Neurosymbolic Reasoning Shortcuts under the Independence Assumption},
+	section = {Poster},
+	software = {https://github.com/HEmile/independence-vs-rs/tree/main},
+	author = {Krieken, Emile van and Minervini, Pasquale and Ponti, Edoardo and Vergari, Antonio},
+	pages = {285-302},
+	openreview = {ifoKXDf1KS},
+	abstract = {The ubiquitous independence assumption among symbolic concepts in neurosymbolic (NeSy) predictors is a convenient simplification: NeSy predictors use it to speed up probabilistic reasoning. Recent works like van Krieken et al. (2024) and Marconato et al. (2024) argued that the independence assumption can hinder learning of NeSy predictors and, more crucially, prevent them from correctly modelling uncertainty. There is, however, scepticism in the NeSy community around the scenarios in which the independence assumption actually limits NeSy systems (Faronius and Dos Martires, 2025). In this work, we settle this question by formally showing that assuming independence among symbolic concepts entails that a model can never represent uncertainty over certain concept combinations. Thus, the model fails to be aware of _reasoning shortcuts_, i.e., the pathological behaviour of NeSy predictors that predict correct downstream tasks but for the wrong reasons.}
+}
+
+@InProceedings{leemhuis23,
+	title = {Understanding the Expressive Capabilities of Knowledge Base Embeddings under Box Semantics},
+	section = {Poster},
+	author = {Leemhuis, Mena and Kutz, Oliver},
+	pages = {303-321},
+	openreview = {0d4sp8MjWs},
+	abstract = {Knowledge base embeddings are a widely applied technique, used for instance to improve link prediction tasks on knowledge graphs by using the geometric regularities occurring during learning. Techniques where ontological concepts are interpreted as boxes have shown to be particularly useful in this context, as they are both suitably expressive and of low computational complexity. However, to use those regularities for learning, it is necessary to determine and understand the possible biases in the approach: how do we distinguish what is learned due to regularities in the data from what is simply based on the representational limitations of the embedding? In this paper, we establish that there are some severe limitations in expressivity when modeling description logic ontologies with box embeddings in intended target languages such as $\mathcal{ELHO}(\circ)^\bot$. We illustrate that, under some weak assumptions, box semantics always satisfy Helly's Property, and is thus too weak to capture semantically $\mathcal{ELHO}(\circ)^\bot$ in an adequate way.  We then characterize how so-called Helly-satisfiable $\mathcal{ELHO}(\circ)^\bot$ ontologies can be adequately determined. We discuss the implications of this result with respect to existing box embedding approaches and real-world use cases.}
+}
+
+@InProceedings{pryor23,
+	title = {Neural-Symbolic Architectural Axioms of Integration: A Manifesto},
+	section = {Poster},
+	author = {Pryor, Connor and Getoor, Lise},
+	pages = {322-342},
+	openreview = {zvDSg565AA},
+	abstract = {The integration of neural and symbolic methods has long been viewed as a promising path toward more general, interpretable, and robust artificial intelligence. The past two decades have seen a rapid proliferation of neural-symbolic (NeSy) systems, spanning a wide range of architectures, reasoning strategies, and application domains. However, this growth has outpaced theoretical clarity: many existing approaches conflate the roles of learning, inference, and representation, leading to a fragmented field lacking principled foundations. In this work, we address this gap by proposing a set of architectural axioms of integration—formal, implementation-agnostic principles that define how neural and symbolic components can be coherently combined. These axioms abstract away from system-specific details and instead characterize the structural interface between neural perception and symbolic reasoning. Rather than introducing a new method, this work offers a foundation to organize, compare, and reason about the rapidly expanding space of NeSy approaches.}
+}
+
+@InProceedings{chen23a,
+	title = {CRAFT: A Neuro-Symbolic Framework for Visual Functional Affordance Grounding},
+	section = {Poster},
+	author = {Chen, Zhou and Lin, Joe and Aakur, Sathyanarayanan N.},
+	pages = {343-352},
+	openreview = {uCAFYKzvju},
+	abstract = {We introduce CRAFT, a neuro-symbolic framework for interpretable affordance grounding, which identifies the objects in a scene that enable a given action (e.g., “cut”). CRAFT integrates structured commonsense priors from ConceptNet and language models with visual evidence from CLIP, using an energy-based reasoning loop to refine predictions iteratively. This process yields transparent, goal-driven decisions to ground symbolic and perceptual structures. Experiments in multi-object, label-free settings demonstrate that CRAFT enhances accuracy while improving interpretability, providing a step toward robust and trustworthy scene understanding.}
+}
+
+@InProceedings{sevenhuijsen23,
+	title = {Generating Safety-Critical Automotive C-programs using LLMs with Formal Verification},
+	section = {Poster},
+	author = {Sevenhuijsen, Merlijn and Patil, Minal Suresh and Nyberg, Mattias and Ung, Gustav},
+	pages = {353-378},
+	openreview = {xcLrUIeGo3},
+	abstract = {We evaluate the feasibility of generating formally verified C code that adheres to both functional and non-functional requirements using Large Language Models (LLMs) for three real industrial, automotive safety-critical software modules. We explore the capabilities of ten LLMs and four prompting techniques — Zero-Shot, Zero-Shot Chain-of-Thought, One-Shot, and One-Shot Chain-of-Thought — to generate C programs for the three modules. Functional correctness of generated programs is assessed through functional verification, and adherence to non-functional requirements is evaluated using an industrial static analyzer, along with human evaluation. The results demonstrate that it is feasible for LLMs to generate functionally correct code, with success rates of 540/800, 59/800, and 46/800 for the three modules. Additionally, the generated programs frequently adhere to the defined non-functional requirements. In the cases where the LLM-generated programs did not adhere to the non-functional requirements, deviations typically involve violations of single-read and single-write access patterns or minimal variable scope constraints. These findings highlight the promise and limitations of using LLMs to generate industrial safety-critical C programs, providing insight into improving automated LLM-based program generation in the automotive safety-critical domain.}
+}
+
+@InProceedings{myers23,
+	title = {Talking to GDELT Through Knowledge Graphs},
+	section = {Poster},
+	author = {Myers, Audun D and Vargas, Max and Aksoy, Sinan Guven and Joslyn, Cliff and Wilson, Benjamin and Burke, Lee and Grimes, Tom},
+	pages = {379-391},
+	openreview = {fhyQO1hO4k},
+	abstract = {In this work we study various Retrieval Augmented Regeneration (RAG) approaches to gain an understanding of the strengths and weaknesses of each approach in a question-answering analysis.
+To gain this understanding we use a case-study subset of the Global Database of Events, Language, and Tone (GDELT) dataset as well as a corpus of raw text scraped from the online news articles.
+To retrieve information from the text corpus we implement a traditional vector store RAG as well as state-of-the-art large language model (LLM) based approaches for automatically constructing KGs and retrieving the relevant subgraphs. In addition to these corpus approaches, we develop a novel ontology-based framework for constructing knowledge graphs (KGs) from GDELT directly which leverages the underlying schema of GDELT to create structured representations of global events. 
+For retrieving relevant information from the ontology-based KGs  we implement both direct graph queries and state-of-the-art graph retrieval approaches.
+We compare the performance of each method in a question-answering task. We find that while our ontology-based KGs are valuable for question-answering, automated extraction of the relevant subgraphs is challenging. Conversely, LLM-generated KGs, while capturing event summaries, often lack consistency and interpretability. Our findings suggest benefits of a synergistic approach between ontology and LLM-based KG construction, with proposed avenues toward that end.}
+}
+
+@InProceedings{allen23,
+	title = {Sound and Complete Neurosymbolic Reasoning with LLM-Grounded Interpretations},
+	section = {Poster},
+	software = {https://github.com/bradleypallen/bilateral-factuality-evaluation},
+	author = {Allen, Bradley P. and Chhikara, Prateek and Ferguson, Thomas Macaulay and Ilievski, Filip and Groth, Paul},
+	pages = {392-419},
+	openreview = {yGLdjzQT9m},
+	abstract = {Large language models (LLMs) have demonstrated impressive capabilities in natural language understanding and generation, but they exhibit problems with logical consistency in the output they generate. How can we harness LLMs’ broad-coverage parametric knowledge in formal reasoning despite their inconsistency? We present a method for directly integrating an LLM into the interpretation function of the formal semantics for a paraconsistent logic. We provide experimental evidence for the feasibility of the method by evaluating the function using datasets created from several short-form factuality benchmarks. Unlike prior work, our method offers a theoretical framework for neurosymbolic reasoning that leverages an LLM’s knowledge while preserving the underlying logic’s soundness and completeness properties.}
+}
+
+@InProceedings{olivier23,
+	title = {Towards a Neurosymbolic Reasoning System Grounded in Schematic Representations},
+	section = {Poster},
+	author = {Olivier, François and Bouraoui, Zied},
+	pages = {420-438},
+	openreview = {bbYk2pD7qY},
+	abstract = {Despite significant progress in natural language understanding, Large Language Models (LLMs) remain error-prone when performing logical reasoning, often lacking the robust mental representations that enable human-like comprehension. We introduce a prototype neurosymbolic system, Embodied-LM, that grounds understanding and logical reasoning in schematic representations based on image schemas—recurring patterns derived from sensorimotor experience that structure human cognition. Our system operationalizes the spatial foundations of these cognitive structures using declarative spatial reasoning within Answer Set Programming. Through evaluation on logical deduction problems, we demonstrate that LLMs can be guided to interpret scenarios through embodied cognitive structures, that these structures can be formalized as executable programs, and that the resulting representations support effective logical reasoning with enhanced interpretability. While our current implementation focuses on spatial primitives, it establishes the computational foundation for incorporating more complex and dynamic representations.}
+}
+
+@InProceedings{ciupa23,
+	title = {Exploring Verification Frameworks for Social Choice Alignment},
+	section = {Poster},
+	author = {Ciupa, Jessica and Belle, Vaishak and Komendantskaya, Ekaterina},
+	pages = {439-446},
+	openreview = {BfxoGYNJa3},
+	abstract = {The deployment of autonomous agents that interact with humans in safety-critical situations raises new research problems as we move towards fully autonomous systems in domains such as autonomous vehicles or search and rescue. If autonomous agents are placed in a dilemma, how would they act? The literature in computational ethics has explored the actions and learning methods that emerge in ethical dilemmas. However, our position paper examines how ethical dilemmas are not isolated in a social vacuum. Our central claim in our position paper is that to enable trust among all human users, a neuralsymbolic verification of moral preference alignment is required. We propose that the formal robustness properties be applied to social choice modelling. We outline how robustness properties can help validate the formation of stable social preference clusters in deep neural network classifiers. Our initial results highlight the vulnerabilities of models in moral-critical scenarios to perturbations, suggesting a verification-training loop for improved robustness. We position this work as an inquiry into the viability of verifying moral preference alignment, based on our initial results. Ultimately, we aim to contribute to the broader interdisciplinary effort that integrates formal methods, social choice theory, and empirical moral psychology for interpretable computational ethics.}
+}
+
+@InProceedings{chen23b,
+	title = {A Comparative Study of Neurosymbolic AI Approaches to Interpretable Logical Reasoning},
+	section = {Poster},
+	author = {Chen, Michael K.},
+	pages = {447-462},
+	openreview = {uO0oaNY9fC},
+	abstract = {General logical reasoning, defined as the ability to reason deductively on domain-agnostic tasks, continues to be a challenge for large language models (LLMs). Current LLMs fail to reason deterministically and are not interpretable. As such, there has been a recent surge in interest in neurosymbolic AI, which attempts to incorporate logic into neural networks. We first identify two main neurosymbolic approaches to improving logical reasoning: (i) the integrative approach comprising models where symbolic reasoning is contained within the neural network, and (ii) the hybrid approach comprising models where a symbolic solver, separate from the neural network, performs symbolic reasoning. Both contain AI systems with promising results on domain-specific logical reasoning benchmarks. However, their performance on domain-agnostic benchmarks is understudied. To the best of our knowledge, there has not been a comparison of the contrasting approaches that answers the following question: Which approach is more promising for developing general logical reasoning? To analyze their potential, the following best-in-class domain-agnostic models are introduced: Logic Neural Network (LNN), which uses the integrative approach, and LLM-Symbolic Solver (LLM-SS), which uses the hybrid approach. Using both models as case studies and representatives of each approach, our analysis demonstrates that the hybrid approach is more promising for developing general logical reasoning because (i) its reasoning chain is more interpretable, and (ii) it retains the capabilities and advantages of existing LLMs. To support future works using the hybrid approach, we propose a generalizable framework based on LLM-SS that is modular by design, model-agnostic, domain-agnostic, and requires little to no human input.}
+}
+
+@InProceedings{baugh23,
+	title = {Disentangling Neural Disjunctive Normal Form Models},
+	section = {Poster},
+	software = {https://github.com/kittykg/disentangling-ndnf-classification},
+	author = {Baugh, Kexin Gu and Perreault, Vincent and Baugh, Matthew and Dickens, Luke and Inoue, Katsumi and Russo, Alessandra},
+	pages = {463-493},
+	openreview = {66YzQK1eLW},
+	abstract = {Neural Disjunctive Normal Form (DNF) based models are powerful and interpretable approaches to neuro-symbolic learning and have shown promising results in classification and reinforcement learning settings without prior knowledge of the tasks. However, their performance is degraded by the thresholding of the post-training symbolic translation process. We show here that part of the performance degradation during translation is due to its failure to disentangle the learned knowledge represented in the form of the networks' weights. We address this issue by proposing a new disentanglement method; by splitting nodes that encode nested rules into smaller independent nodes, we are able to better preserve the models' performance. Through experiments on binary, multiclass, and multilabel classification tasks (including those requiring predicate invention), we demonstrate that our disentanglement method provides compact and interpretable logical representations for the neural DNF-based models, with performance closer to that of their pre-translation counterparts. Our code is available at https://github.com/kittykg/disentangling-ndnf-classification.}
+}
+
+@InProceedings{schellhorn23,
+	title = {mULLER: A Modular Monad-Based Semantics of the Neurosymbolic ULLER Framework},
+	section = {Poster},
+	software = {https://github.com/cherryfunk/mULLER},
+	author = {Schellhorn, Daniel Romero and Mossakowski, Till},
+	pages = {494-518},
+	openreview = {zIsnMqATI6},
+	abstract = {ULLER (Unified Language for LEarning and Reasoning) provides a single first-order logic
+(FOL) syntax, enabling its knowledge bases to be used directly across a wide range of
+neurosymbolic systems. The original specification endows this syntax with three pairwise
+independent semantics—classical, fuzzy, and probabilistic—each accompanied by dedicated
+semantic rules. We show that these seemingly disparate semantics are all instances of one
+categorical framework based on monads, the very construct that models side effects in func-
+tional programming. This enables the modular addition of new semantics and systematic
+translations between them. As example, we outline the addition of generalized quantifi-
+cation in Logic Tensor Networks (LTN) to arbitrary (also infinite) domains by extending
+the Giry monad to probability spaces. In particular, our approach allows a modular imple-
+mentation of ULLER in Python and Haskell, of which we have published initial versions
+on GitHub.}
+}
+
+@InProceedings{brunink23,
+	title = {The ART of Link Prediction with KGEs},
+	section = {Poster},
+	author = {Brunink, Yannick and Cochez, Michael and Urbani, Jacopo},
+	pages = {519-539},
+	openreview = {xRlIvquvBM},
+	abstract = {Link Prediction (LP) in Knowledge Graphs (KGs) is typically framed as ranking candidate entities for a query of the form $(entity, relation,?)$, with models evaluated on their ability to rank the correct entities for each query. At the same time, Knowledge Graph Embedding (KGE) models used for this task produce unnormalised scores, making it unclear how to interpret their belief in the truthfulness of triples across different queries. Together, these two factors create a blind spot: models can achieve perfect rankings while assigning scores that are not comparable across queries, limiting their utility in downstream tasks or even in identifying the most plausible triples overall. Indeed, this issue becomes clear when test triples are ranked globally and evaluated with IR metrics, revealing that models with unnormalized scores often perform poorly due to inconsistent scoring across queries. To address this problem, we propose a new KGE model, called ART, which exploits probabilistic Auto-Regressive modelling and hence is normalised by design. Despite its conceptual simplicity, we show that ART outperforms prior art for discriminative and generative LP as well as other post-hoc calibration techniques.}
+}
+
+@InProceedings{hakim23,
+	title = {SymRAG: Efficient Neuro-Symbolic Retrieval Through Adaptive Query Routing},
+	section = {Poster},
+	software = {https://github.com/sbhakim/symrag},
+	author = {Hakim, Safayat Bin and Adil, Muhammad and Velasquez, Alvaro and Song, Houbing Herbert},
+	pages = {540-564},
+	openreview = {oXGWKdYPNm},
+	abstract = {Current Retrieval-Augmented Generation systems use uniform processing, causing inefficiency as simple queries consume resources similar to complex multi-hop tasks. We present SymRAG, a framework that introduces adaptive query routing via real-time complexity and load assessment to select symbolic, neural, or hybrid pathways. SymRAG's neuro-symbolic approach adjusts computational pathways based on both query characteristics and system load, enabling efficient resource allocation across diverse query types. By combining linguistic and structural query properties with system load metrics, SymRAG allocates resources proportional to reasoning requirements. Evaluated on 2,000 queries across HotpotQA (multi-hop reasoning) and DROP (discrete reasoning) using Llama-3.2-3B and Mistral-7B models, SymRAG achieves competitive accuracy (97.6--100.0\% exact match) with efficient resource utilization (3.6--6.2% CPU utilization, 0.985--3.165s processing). Disabling adaptive routing increases processing time by 169--1151%, showing its significance for complex models. These results suggest adaptive computation strategies are more sustainable and scalable for hybrid AI systems that use dynamic routing and neuro-symbolic frameworks.}
+}
+
+@InProceedings{karabulut23,
+	title = {Neurosymbolic Association Rule Mining from Tabular Data},
+	section = {Poster},
+	software = {https://github.com/DiTEC-project/aerial-rule-mining},
+	author = {Karabulut, Erkan and Groth, Paul and Degeler, Victoria},
+	pages = {565-588},
+	openreview = {baSjVYDlMc},
+	abstract = {Association Rule Mining (ARM) is the task of mining patterns among data features in the form of logical rules, with applications across a myriad of domains. However, high-dimensional datasets often result in an excessive number of rules, increasing execution time and negatively impacting downstream task performance. Managing this rule explosion remains a central challenge in ARM research. To address this, we introduce Aerial+, a novel neurosymbolic ARM method. Aerial+ leverages an under-complete autoencoder to create a neural representation of the data, capturing associations between features. It extracts rules from this neural representation by exploiting the model’s reconstruction mechanism. Extensive evaluations on five datasets against seven baselines demonstrate that Aerial+ achieves state-of-the-art results by learning more concise, high-quality rule sets with full data coverage. When integrated into rule-based interpretable machine learning models, Aerial+ significantly reduces execution time while maintaining or improving accuracy.}
+}
+
+@InProceedings{liu23a,
+	title = {Neurosymbolic Tag-Based Annotation for Interpretable Avatar Creation},
+	section = {Poster},
+	author = {Liu, Minghao and Cheng, Zeyu and Sang, Shen and Liu, Jing and Davis, James},
+	pages = {589-624},
+	openreview = {ROcvabXGkL},
+	abstract = {Avatar creation from human images presents challenges for direct neural approaches, which suffer from inconsistent predictions and poor interpretability due to the large parameter space with hundreds of ambiguous options. We propose a neurosymbolic tag-based annotation method that combines neural perceptual learning with symbolic semantic reasoning. Instead of directly predicting avatar parameters, our approach uses a neural network to predict semantic tags (hair length, curliness, direction) as an intermediate symbolic representation, then applies symbolic search algorithms to match optimal avatar assets. This neurosymbolic design produces higher annotator agreements (96.7\% vs 31.0\% for direct annotation), enables more consistent model predictions, and provides interpretable avatar selection with ranked alternatives. The tag-based system generalizes easily across rendering systems, requiring only new asset annotation while reusing human image tags. Experimental results demonstrate superior convergence, consistency, and visual quality compared to direct prediction methods, showing how neurosymbolic approaches can improve trustworthiness and interpretability in creative AI applications.}
+}
+
+@InProceedings{martorana23,
+	title = {Bridging Bots: from Perception to Action via Multimodal-LMs and Knowledge Graphs},
+	section = {Poster},
+	author = {Martorana, Margherita and Urgese, Francesca and Adamik, Mark and Tiddi, Ilaria},
+	pages = {625-646},
+	openreview = {XZ5UsD6YT6},
+	abstract = {Personal service robots are increasingly deployed to support daily living in domestic environments, particularly for  elderly and individuals requiring assistance. These robots must perceive complex and dynamic surroundings, understand tasks, and execute context-appropriate actions. However, current systems typically rely on proprietary, hard-coded solutions tied to specific hardware and software, resulting in siloed implementations that are difficult to adapt and scale across platforms. Ontologies and Knowledge Graphs (KGs) offer a solution to enable interoperability across systems, through structured and standardized representations of knowledge and reasoning. However, symbolic systems such as KGs and ontologies struggle with raw and noisy sensory input. In contrast, multimodal language models are well suited for interpreting input such as images and natural language, but often lack transparency, consistency, and knowledge grounding. In this work, we propose a neurosymbolic framework that combines the perceptual strengths of multimodal language models with the structured representations provided by KGs and ontologies, with the aim of supporting interoperability in robotic applications. Our approach generates ontology-compliant KGs that can inform robot behavior in a platform-independent manner. We evaluated this framework by integrating robot perception data, ontologies, and five multimodal models (three LLaMA-based and two GPT-based models), each using different modes of neural-symbolic interaction. We assess the consistency and effectiveness of the generated KGs across multiple runs and configurations, and perform statistical analyzes to evaluate performance. Results show that GPT-o1 and LLaMA 4 Maverick consistently outperform other models. However, our findings also indicate that newer models do not guarantee better results, highlighting the critical role of the integration strategy in generating ontology-compliant KGs.}
+}
+
+@InProceedings{zheng23,
+	title = {JARVIS: A Neuro-Symbolic Commonsense Reasoning Framework for Conversational Embodied Agents},
+	section = {Poster},
+	author = {Zheng, Kaizhi and Zhou, Kaiwen and Gu, Jing and Fan, Yue and Wang, Jialu and Di, Zonglin and He, Xuehai and Wang, Xin Eric},
+	pages = {647-673},
+	openreview = {T9J96eD2Li},
+	abstract = {Building a conversational embodied agent to execute real-life tasks has been a long-standing yet quite challenging research goal, as it requires effective human-agent communication, multi-modal understanding, long-range sequential decision making, etc. Traditional symbolic methods have scaling and generalization issues, while end-to-end deep learning models suffer from data scarcity and high task complexity, and are often hard to explain. To benefit from both worlds, we propose JARVIS, a neuro-symbolic commonsense reasoning framework for modular, generalizable, and interpretable conversational embodied agents. First, it acquires symbolic representations by prompting large language models (LLMs) for language understanding and sub-goal planning, and by constructing semantic maps from visual observations. Then the symbolic module reasons for sub-goal planning and action generation based on task- and action-level common sense. Extensive experiments on the TEACh dataset validate the efficacy and efficiency of our JARVIS framework, which achieves state-of-the-art (SOTA) results on all three dialog-based embodied tasks, including Execution from Dialog History (EDH), Trajectory from Dialog (TfD), and Two-Agent Task Completion (TATC) (e.g., our method boosts the unseen Success Rate on EDH from 6.1\% to 15.8\%). Moreover, we systematically analyze the essential factors that affect the task performance and also demonstrate the superiority of our method in few-shot settings.}
+}
+
+@InProceedings{delplanque23,
+	title = {A Comparative Analysis of Neurosymbolic Methods for Link Prediction},
+	section = {Poster},
+	author = {Delplanque, Guillaume and Werner, Luisa and Layaïda, Nabil and Geneves, Pierre},
+	pages = {674-696},
+	openreview = {hCyqbFapJi},
+	abstract = {Link prediction on knowledge graphs is relevant to various applications, such as recommendation systems, question answering, and entity search.
+This task has been approached from different perspectives: symbolic methods leverage rule-based reasoning but struggle with scalability and noise, while knowledge graph embeddings (KGE) represent entities and relations in a continuous space, enabling scalability but often neglecting logical constraints from ontologies.
+Recently, neurosymbolic approaches have emerged to bridge this gap by integrating embedding-based learning with symbolic reasoning.
+This paper provides a structured review of state-of-the-art neurosymbolic methods for link prediction.
+Beyond a qualitative analysis, a key contribution of this work is a comprehensive experimental benchmarking, where we systematically compare these methods on the same datasets using the same metrics.
+This unified experimental setup allows for a fair assessment of their strengths and limitations, bringing elements of answers to following key questions: How accurate are these methods? How scalable are they?
+How beneficial are they for different levels of provided knowledge and to which extent are they robust to incorrect knowledge?}
+}
+
+@InProceedings{zhu23b,
+	title = {ArgRAG: Explainable Retrieval Augmented Generation using Quantitative Bipolar Argumentation},
+	section = {Poster},
+	author = {Zhu, Yuqicheng and Potyka, Nico and Hernández, Daniel and He, Yuan and Ding, Zifeng and Xiong, Bo and Zhou, Dongzhuoran and Kharlamov, Evgeny and Staab, Steffen},
+	pages = {697-718},
+	openreview = {oYFXK9szLN},
+	abstract = {Retrieval-Augmented Generation (RAG) enhances large language models by incorporating external knowledge, yet suffers from critical limitations in high-stakes domains—namely, sensitivity to noisy or contradictory evidence and opaque, stochastic decision-making. We propose \textsc{ArgRAG}, an explainable, and contestable alternative that replaces black-box reasoning with structured inference using a Quantitative Bipolar Argumentation Framework (QBAF). \textsc{ArgRAG} constructs a QBAF from retrieved documents and performs deterministic reasoning under gradual semantics. This allows faithfully explanaining and contesting decisions. Evaluated on two fact verification benchmarks, PubHealth and RAGuard, \textsc{ArgRAG} achieves strong accuracy while significantly improving transparency.}
+}
+
+@InProceedings{nicolau23,
+	title = {Understanding Boolean Function Learnability on Deep Neural Networks: PAC Learning Meets Neurosymbolic Models},
+	section = {Poster},
+	software = {https://github.com/machine-reasoning-ufrgs/mlbf and https://github.com/zzwonder/Valiants-Algorithm-for-Learning-CNF-formulas},
+	author = {Nicolau, Marcio and Tavares, Anderson R. and Zhang, Zhiwei and Avelar, Pedro H. C. and Flach, João Marcos and Lamb, Luis DC and Vardi, Moshe},
+	pages = {719-735},
+	openreview = {RrqvMvwpWn},
+	abstract = {Computational learning theory states that many classes of boolean formulas are learnable in polynomial time. This paper addresses the understudied subject of how, in practice, such formulas can be learned by deep neural networks. Specifically, we analyze boolean formulas associated with model-sampling benchmarks, combinatorial optimization problems, and random 3-CNFs with varying degrees of constrainedness. Our experiments indicate that: (i) neural learning generalizes better than pure rule-based systems and pure symbolic approach; (ii) relatively small and shallow neural networks are very good approximators of formulas associated with combinatorial optimization problems; (iii) smaller formulas seem harder to learn, possibly due to the fewer positive (satisfying) examples available; and (iv) interestingly, underconstrained 3-CNF formulas are more challenging to learn than overconstrained ones. Such findings pave the way for a better understanding, construction, and use of neurosymbolic AI methods.}
+}
+
+@InProceedings{ontiveros23,
+	title = {Distilling KGE black boxes into interpretable NeSy models},
+	section = {Poster},
+	software = {https://github.com/rodrigo-castellano/KGE-Distillation},
+	author = {Ontiveros, Rodrigo Castellano and Giannini, Francesco and Diligenti, Michelangelo},
+	pages = {736-749},
+	openreview = {Fv8vaQ13Y4},
+	abstract = {Knowledge Graph Embedding (KGE) models have shown remarkable performances in the knowledge graph completion task, thanks to their ability to capture and represent complex relational patterns. Indeed, modern KGEs encompass different inductive biases, which can account for relational patterns like reasoning compositional chains, symmetries, anti-symmetries, hierarchical patterns, etc.
+However, KGE models inherently lack interpretability, as their generalization capabilities are purely focused on mapping human interpretable units of information, like constants and predicates, into vector embeddings in a dense latent space, which is completely opaque to a human operator. 
+On the other hand, different Neural-Symbolic (NeSy) methods have shown competitive results in knowledge completion tasks, but their focus on achieving high accuracy often leads to sacrificing interpretability. Many existing NeSy approaches, while inherently interpretable, resort to blending their predictions with opaque KGEs to boost performance, ultimately diminishing their explanatory power.
+This paper introduces a novel approach to address this limitation by applying a post-hoc NeSy method to KGE models. This strategy ensures both high fidelity to KGE models and the inherent interpretability of NeSy approaches. The proposed framework defines NeSy reasoners that generate explicit logic proofs using predefined or learned rules, ensuring transparent and explainable predictions. We evaluate the methodology using both accuracy and explainability-based metrics, demonstrating the effectiveness of our approach.}
+}
+
+@InProceedings{camposampiero23,
+	title = {Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?},
+	section = {Poster},
+	author = {Camposampiero, Giacomo and Hersche, Michael and Wattenhofer, Roger and Sebastian, Abu and Rahimi, Abbas},
+	pages = {750-776},
+	openreview = {ZcdBwzcBmV},
+	abstract = {This work presents a first evaluation of two state-of-the-art Large Reasoning Models (LRMs), OpenAI's o3-mini and DeepSeek R1, on analogical reasoning, focusing on well-established nonverbal human IQ tests based on Raven's progressive matrices.
+We benchmark with the I-RAVEN dataset and its extension, I-RAVEN-X, which tests the ability to generalize to longer reasoning rules and ranges of the attribute values.
+To assess the influence of visual uncertainties on these symbolic analogical reasoning tests, we extend the I-RAVEN-X dataset, which otherwise assumes an oracle perception.
+We adopt a two-fold strategy to simulate this imperfect visual perception: 1) we introduce confounding attributes which, being sampled at random, do not contribute to the prediction of the correct answer of the puzzles, and 2) smooth the distributions of the input attributes' values. 
+We observe a sharp decline in OpenAI's o3-mini task accuracy, dropping from 86.6% on the original I-RAVEN to just 17.0%—approaching random chance—on the more challenging I-RAVEN-X, which increases input length and range and emulates perceptual uncertainty.
+This drop occurred despite spending 3.4x more reasoning tokens.
+A similar trend is also observed for DeepSeek R1: from 80.6% to 23.2%.
+On the other hand, a neuro-symbolic probabilistic abductive model, ARLC, that achieves state-of-the-art performances on I-RAVEN, can robustly reason under all these out-of-distribution tests, maintaining strong accuracy with only a modest accuracy reduction from 98.6% to 88.0%. Our code is available at https://github.com/IBM/raven-large-language-models.}
+}
+
+@InProceedings{lymperopoulos23,
+	title = {Act-to-Ground: A Framework for Symbol Grounding in Planning Domains},
+	section = {Poster},
+	author = {Lymperopoulos, Panagiotis and Liu, Liping},
+	pages = {777-795},
+	openreview = {2cbCcr4fdD},
+	abstract = {Neurosymbolic decision-making agents inherit many of the critical transparency and interpretability benefits of planning-based symbolic agents but also face one of their central challenges: the Symbol Grounding Problem (SGP). Grounding hand-crafted symbolic planning domains to percepts typically requires training models with extensive annotated data which hinders their applicability to broader problems. In this work we propose Act-to-Ground (A2G), a framework for training grounding models for symbolic planners with weak supervision obtained through environment interaction or demonstrations. We first cast the grounding problem as an inference problem and 1) use satisfiability-based planning to provide weak supervision to the grounding model by exploiting knowledge already built into the planning domain, 2) propose an MCMC sampler that enables sampling weak labels for grounding planners, 3) improve neurosymbolic grounding performance via a score-matching objective and 4) propose a learnability condition for learning grounding models for planners.}
+}
+
+@InProceedings{kairgeldin23,
+	title = {Neurosymbolic models based on hybrids of convolutional neural networks and decision trees},
+	section = {Poster},
+	author = {Kairgeldin, Rasul and Carreira-Perpiñán, Miguel Á.},
+	pages = {796-813},
+	openreview = {NdbjM5ZCor},
+	abstract = {Building on previous work, we propose a specific form of neurosymbolic model consisting of the composition of convolutional neural network layers with a sparse oblique classification tree (having hyperplane splits using few features). This can be seen as a neural feature extraction that finds a more suitable representation of the input space followed by a form of rule-based reasoning to arrive at a decision that can be explained. We show how to control the sparsity across the different decision nodes of the tree and its effect on the explanations produced. We demonstrate this on image classification tasks and show, among other things, that relatively small subsets of neurons are entirely responsible for the classification into specific classes, and that the neurons' receptive fields focus on areas of the image that provide best discrimination.}
+}
+
+@InProceedings{rao23,
+	title = {Neural Theorem Proving: Generating and Structuring Proofs for Formal Verification},
+	section = {Poster},
+	software = {https://github.com/kings-crown/ProofSeek},
+	author = {Rao, Balaji and Eiers, William and Lipizzi, Carlo},
+	pages = {814-829},
+	openreview = {QeoJtLyRsn},
+	abstract = {Formally verifying properties of software code has been a highly desirable task, especially with the emergence of LLM-generated code. In the same vein, they provide an interesting avenue for the exploration of formal verification and mechanistic interpretability. Since the introduction of code-specific models, despite their successes in generating code in Lean4 and Isabelle, the task of generalized theorem proving still remains far from being fully solved and will be a benchmark for reasoning capability in LLMs. In this work, we introduce a framework that generates whole proofs in a formal language to be used within systems that utilize the power of built-in tactics and off-the-shelf automated theorem provers. Our framework includes 3 components: generating natural language statements of the code to be verified, an LLM that generates formal proofs for the given statement, and a module employing heuristics for building the final proof. To train the LLM, we employ a 2-stage fine-tuning process, where we first use SFT-based training to enable the model to generate syntactically correct Isabelle code and then RL-based training that encourages the model to generate proofs verified by a theorem prover. We validate our framework using the miniF2F-test benchmark and the Isabelle proof assistant and design a use case to verify the correctness of the AWS S3 bucket access policy code. We also curate a dataset based on the FVEL\textsubscript{\textnormal{ER}} dataset for future training tasks.}
+}
+
+@InProceedings{mahdavinejad23,
+	title = {Towards Explainable Depression Detection: A Neurosymbolic Approach to Uncover Social Media Signals with Generative AI},
+	section = {Poster},
+	software = {https://github.com/MahdaviNejad/ProtoDep},
+	author = {Mahdavinejad, Mohammad Saeid and Adibi, Peyman and Monajemi, Amirhassan and Hitzler, Pascal},
+	pages = {830-853},
+	openreview = {JW0bICKKB3},
+	abstract = {Depression remains a pervasive mental health disorder that demands prompt diagnosis and intervention. Although social media data presents a promising avenue for early detection, traditional deep neural models are frequently critiqued for their lack of interpretability and susceptibility to bias. We introduce ProtoDep—a neurosymbolic framework that integrates clinically grounded categorizations (e.g., PHQ-9 symptoms) with large language model–assisted prototype learning. Unlike conventional black-box models, ProtoDep aligns individual tweets with symptom-level prototypes, offering interpretable explanations at three levels: (i) symptom-level insights that map user posts to recognized depressive patterns, (ii) case-based reasoning that compares users to representative prototype profiles, and (iii) transparent concept-level decisions, wherein classification at inference time is driven by the distances between the user profile and prototype user and symptom clusters, yielding clear, quantifiable explanations. By integrating symbolic mental health constructs with neural embeddings, ProtoDep achieves a mean F1-score of 94% across five benchmark datasets and establishes a foundation for interpretable depression screening pipelines with potential applicability in clinical settings.}
+}
+
+@InProceedings{arriaga23,
+	title = {Bayesian Inverse Physics for Neuro-Symbolic Robot Learning},
+	section = {Poster},
+	author = {Arriaga, Octavio and Adam, Rebecca Carrie and Laux, Melvin and Gutzeit, Lisa and Ragni, Marco and Peters, Jan and Kirchner, Frank},
+	pages = {854-872},
+	openreview = {YeT4WtG47d},
+	abstract = {Real-world robotic applications, from autonomous exploration to assistive technologies, require adaptive, interpretable, and data-efficient learning paradigms. While deep learning architectures and foundation models have driven significant advances in diverse robotic applications, they remain limited in their ability to operate efficiently and reliably in unknown and dynamic environments. In this position paper, we critically assess these limitations and introduce a conceptual framework for combining data-driven learning with deliberate, structured reasoning. Specifically, we propose leveraging differentiable physics for efficient world modeling, Bayesian inference for uncertainty-aware decision-making, and meta-learning for rapid adaptation to new tasks. By embedding physical symbolic reasoning within neural models, robots could generalize beyond their training data, reason about novel situations, and continuously expand their knowledge. We argue that such hybrid neuro-symbolic architectures are essential for the next generation of autonomous systems, and to this end, we provide a research roadmap to guide and accelerate their development.}
+}
+
+@InProceedings{sha23,
+	title = {Gestalt Vision: A Dataset for Evaluating Gestalt Principles in Visual Perception},
+	section = {Poster},
+	software = {https://github.com/ml-research/ELVIS},
+	author = {Sha, Jingyuan and Shindo, Hikaru and Kersting, Kristian and Dhami, Devendra Singh},
+	pages = {873-890},
+	openreview = {I5EPUe0pAB},
+	abstract = {Gestalt principles, established in the 1920s, describe how humans perceive individual elements as cohesive wholes. These principles, including proximity, similarity, closure, continuity, and symmetry, play a fundamental role in human perception, enabling structured visual interpretation. Despite their significance, existing AI benchmarks fail to assess models' ability to infer patterns at the group level, where multiple objects following the same Gestalt principle are considered as a group using these principles. To address this gap, we introduce Gestalt Vision, a diagnostic framework designed to evaluate AI models' ability to not only identify groups within patterns but also reason about the underlying logical rules governing these patterns.
+Gestalt Vision provides structured visual tasks and baseline evaluations spanning neural, symbolic, and neural-symbolic approaches, uncovering key limitations in current models' ability to perform human-like visual cognition. Our findings emphasize the necessity of incorporating richer perceptual mechanisms into AI reasoning frameworks. By bridging the gap between human perception and computational models, Gestalt Vision offers a crucial step toward developing AI systems with improved perceptual organization and visual reasoning capabilities.}
+}
+
+@InProceedings{kronström23,
+	title = {Ontology-based box embeddings and knowledge graphs for predicting phenotypic traits in Saccharomyces cerevisiae},
+	section = {Poster},
+	software = {https://github.com/filipkro/kg-box-emb},
+	author = {Kronström, Filip and Brunnsåker, Daniel and Tiukova, Ievgeniia A. and King, Ross D.},
+	pages = {891-912},
+	openreview = {RUiTmnJrSS},
+	abstract = {We present a method that uses graph neural networks (GNNs) to predict and interpret digenic deletion fitness in the yeast Saccharomyces cerevisiae from a knowledge graph (KG) with ontology-based box embeddings.
+
+We construct the KG from community databases using terms defined in several ontologies. From the class hierarchies in the ontologies, box embeddings are learnt as low dimensional representations of the nodes in the graph, which are used together with GNNs to predict cell growth for digenic deletions from the KG. With this we show that high level qualitative information can be used to predict experimental data.
+
+Prediction performance was improved when using box embeddings of ontologies to represent the nodes in the graph, compared to learning features specific for this task. This suggests that class hierarchies in ontologies contain useful information about the domains, which can be extracted in the training of the box embeddings. We also demonstrate that our model can generalise beyond the task it was trained for by evaluating it on higher order gene deletions.
+
+Additionally, we apply model interpretability techniques to identify co-occurring edges critical for fitness. Our findings are further validated by a biological experiment that reveals an association between inositol utilization and osmotic stress resistance, emphasising the model’s potential to guide scientific discovery.}
+}
+
+@InProceedings{deane23,
+	title = {Neuro-Symbolic Inverse Constrained Reinforcement Learning},
+	section = {Poster},
+	author = {Deane, Oliver and Ray, Oliver},
+	pages = {913-925},
+	openreview = {oVb3sJAnfx},
+	abstract = {Inverse Constrained Reinforcement Learning (ICRL) is an established field of policy learning that augments reward-driven exploratory optimisation with example-driven constraint inference aimed at exploiting limited observations of expert behaviour. 
+This paper proposes a generalisation of ICRL that employs weighted constraints to better support lifelong learning and to handle domains with potentially conflicting social norms. We introduce a Neuro-Symbolic ICRL approach (NSICRL) with two key components: 
+a symbolic system based on Inductive Logic Programming (ILP) that infers first-order constraints which are human-interpretable and generalise across environment configurations; and a neural system based on Deep Q learning (DQL) that efficiently learns near-optimal policies subject to those constraints. By weighting the high-level ILP constraints (based on the order in which they are learnt) and encoding them as low-level state-action penalties in the DQL reward function, we effectively allow earlier constraints to be overridden by later ones. Unlike prior work in ICRL, our approach is able to continue working when exposed to newly encountered expert behaviours that reveal more nuanced exceptions to previously learnt constraints. We evaluate NSICRL in a simulated traffic domain, which shows how it outperforms existing methods in terms of efficiency and accuracy when learning hard constraints; and which also shows the utility of learning defeasible norms in an ICRL context. To the best of our knowledge, this is the first approach that places equal emphasis on exploratory and imitative learning while also being able to infer defeasible norms in an interpretable way that scales to non-trivial examples.}
+}
+
+@InProceedings{dasgupta23,
+	title = {MC3G: Model Agnostic Causally Constrained Counterfactual Generation},
+	section = {Poster},
+	software = {https://github.com/sopam/MC3G},
+	author = {Dasgupta, Sopam and Halim, Sadaf MD and Arias, Joaquín and Salazar, Elmer and Gupta, Gopal},
+	pages = {926-937},
+	openreview = {CePNpwFup1},
+	abstract = {Machine learning models increasingly influence decisions in high-stakes settings such as
+finance, law and hiring, driving the need for transparent, interpretable outcomes. However, while explainable approaches can help understand the decisions being made, they may inadvertently reveal the underlying proprietary algorithm—an undesirable outcome for many practitioners. Consequently, it is crucial to balance meaningful transparency with a form of recourse that clarifies why a decision was made and offers actionable steps following which a favorable outcome can be obtained.
+
+Counterfactual explanations offer a powerful mechanism to address this need by showing
+how specific input changes lead to a more favorable prediction. We propose Model-Agnostic Causally Constrained Counterfactual Generation (MC3G), a novel framework that tackles limitations in the existing counterfactual methods. First, MC3G is model-agnostic: it approximates any black-box model using an explainable rule-based surrogate model. Second, this surrogate is used to generate counterfactuals that produce a favourable outcome for the original underlying black box model. Third, MC3G refines cost computation by excluding the “effort” associated with feature changes that occur automatically due to causal dependencies. By focusing only on user-initiated changes, MC3G provides a more realistic and fair representation of the effort needed to achieve a favourable outcome. 
+
+We show that MC3G delivers more interpretable and actionable counterfactual recommendations compared to existing techniques all while having a lower cost. Our findings highlight MC3G’s potential to enhance transparency, accountability, and practical utility in decision-making processes that incorporate machine-learning approaches.}
+}
+
+@InProceedings{fenske23,
+	title = {Neurosymbolic Learning in Structured Probability Spaces: A Case Study},
+	section = {Poster},
+	author = {Fenske, Ole and Bader, Sebastian and Kirste, Thomas},
+	pages = {938-956},
+	openreview = {H09CxBms1D},
+	abstract = {This paper examines the impact of neurosymbolic learning on sequence analysis in Structured Probability Spaces (SPS), comparing its effectiveness against a purely neural approach. Sequence analysis in SPS is challenging due to the combinatorial explosion of states and the difficulty of obtaining sufficient annotated training samples. Additionally, in SPS, the set of realizations with non-zero support is often a scattered, non-trivial subset of the Cartesian product of variables, adding complexity to learning and inference. The problem of sequence analysis in SPS emerges, for example, in reconstructing the activities of goal-directed agents from noisy and ambiguous sensor data. We explore the potential of neurosymbolic methods, which integrate symbolic background knowledge with neural learning, to constrain the hypothesis space and improve learning efficiency. Specifically, we conduct a simulation study in human activity recognition using DeepProbLog as a representative for neurosymbolic learning. Our results demonstrate that incorporating symbolic knowledge improves sample efficiency, generalization, and zero-shot learning, compared to a purely neural approach. Furthermore, we show that neurosymbolic models maintain robust performance under data scarcity while offering enhanced interpretability and stability. These findings suggest that neurosymbolic learning provides a promising foundation for sequence analysis in complex, structured domains, where purely neural approaches struggle with insufficient training data and limited generalization ability.}
+}
+
+@InProceedings{chattopadhyay23,
+	title = {Learning and Reasoning with Model-Grounded Symbolic Artificial Intelligence Systems},
+	section = {Poster},
+	software = {https://github.com/AniruddhaChattopadhyay/research-metatuning},
+	author = {Chattopadhyay, Aniruddha and Dandekar, Raj and Roy, Kaushik},
+	pages = {957-976},
+	openreview = {4T8HP1SHOW},
+	abstract = {Neurosymbolic artificial intelligence (AI) systems combine neural network and classical symbolic AI mechanisms to exploit the complementary strengths of large-scale, generalizable learning and robust, verifiable reasoning. Numerous classifications of neurosymbolic AI illustrate how these two components can be integrated in distinctly different ways. In this work, we propose reinterpreting instruction-tuned large language models as model-grounded symbolic AI systems—where natural language serves as the symbolic layer, and grounding is achieved through the model’s internal representation space. Within this framework, we investigate and develop novel learning and reasoning approaches that preserve structural similarities to traditional learning and reasoning paradigms. Comprehensive evaluations across complex mathematical reasoning procedures of varying difficulties provide insights into the effectiveness of our approach towards learning efficiency and reasoning reliability.}
+}
+
+@InProceedings{eiter23,
+	title = {Explainable Zero-Shot Visual Question Answering via Logic-Based Reasoning},
+	section = {Poster},
+	software = {https://github.com/pudumagico/nesy25},
+	author = {Eiter, Thomas and Hadl, Jan and Ruiz, Nelson Higuera and Lange, Lukas and Oetsch, Johannes and Scheuvens, Bileam and Strötgen, Jannik},
+	pages = {977-991},
+	openreview = {k4p44AIby6},
+	abstract = {Visual Question Answering (VQA) is the task of answering natural language questions about images, which is a challenge for AI systems. To enhance adaptability and reduce training overhead, we address VQA in a zero-shot setting by leveraging pre-trained neural modules without additional fine-tuning. Our proposed hybrid neurosymbolic framework, whose capabilities are demonstrated on the challenging GQA dataset, integrates neural and symbolic components through logic-based reasoning via Answer-Set Programming. Specifically, our pipeline employs large language models for semantic parsing of input questions, followed by the generation of a scene graph that captures relevant visual content. Interpretable rules then operate on the symbolic representations of both the question and the scene graph to derive an answer. Our framework provides a key advantage: it enables full transparency into the reasoning process. Using an existing explanation tool, we illustrate how our method fosters trust by making decisions interpretable and facilitates error analysis when predictions are incorrect. Beyond explaining its own reasoning, our framework can also explain answers from more opaque models by integrating their answers into our system, enabling broader interpretability in VQA.}
+}
+
+@InProceedings{murtas23,
+	title = {An evidence-based neuro-symbolic framework for ambiguous image scene classification},
+	section = {Poster},
+	author = {Murtas, Giulia and Boeva, Veselka and Tsiporkova, Elena},
+	pages = {992-1003},
+	openreview = {6UnuZcQ2zY},
+	abstract = {In this study, we propose a novel neuro-symbolic approach to deal with the inherent ambiguity in image scene classification, combining the usage of pre-trained deep learning (DL) models with concepts from modal logic and evidence theory. The DL models are used to detect objects and estimate their depth in a set of labeled images. The obtained outputs are employed to form a dataset of instances characterizing the possible classes. Subsequently, a multi-valued mapping is defined between the data instances and the considered images resulting into each image being represented by the set of instances associated with it. The obtained mapping is utilized to infer necessity and possibility conditions of each class, or equivalently its upper (plausibility) and lower (belief) probabilities. Based on these interval evaluations, a rule-based and a score-based classifiers are built. The overall method is explainable and directly interpretable, robust to data scarcity and data imbalance. The presented framework is studied and evaluated on an abandoned bag detection use case.}
+}
+
+@InProceedings{heilmann23,
+	title = {A Neurosymbolic Approach to Counterfactual Fairness},
+	section = {Poster},
+	software = {https://github.com/xheilmann/CounterfactualFair_LTN},
+	author = {Heilmann, Xenia and Manganini, Chiara and Cerrato, Mattia and Belle, Vaishak},
+	pages = {1004-1025},
+	openreview = {YZSDHz3Ydb},
+	abstract = {Integrating fairness into machine learning models has been an important consideration for the last decade. Here, neurosymbolic models offer a valuable opportunity, as they allow the specification of symbolic, logical constraints that are often guaranteed to be satisfied. However, research on neurosymbolic applications to algorithmic fairness is still in an early stage. With our work, we bridge this gap by integrating counterfactual fairness into the neurosymbolic framework of Logic Tensor Networks (LTN). We use LTN to express accuracy and counterfactual fairness constraints in first-order logic and employ them to achieve desirable levels of both performance and fairness at training time. Our approach is agnostic to the underlying causal model and data generation technique; as such, it may be easily integrated into existing pipelines that generate and extract counterfactual examples. We show, through concrete examples on three real-world datasets, that logical reasoning about counterfactual fairness has some important advantages, among which its intrinsic interpretability, and its flexibility in handling subgroup fairness. Compared to three recent methodologies in counterfactual fairness, our experiments show that a neurosymbolic, LTN-based approach attains better levels of counterfactual fairness.}
+}
+
+@InProceedings{veronese23,
+	title = {Learning Symbolic Persistent Macro-Actions for POMDP Solving Over Time},
+	section = {Poster},
+	author = {Veronese, Celeste and Meli, Daniele and Farinelli, Alessandro},
+	pages = {1026-1040},
+	openreview = {8d7Aj30YF4},
+	abstract = {This paper proposes an integration of temporal logical reasoning and Partially Observable Markov Decision Processes (POMDPs) to achieve interpretable decision-making under uncertainty with macro-actions. Our method leverages a fragment of Linear Temporal Logic (LTL) based on Event Calculus (EC) to generate persistent (i.e., constant) macro-actions, which guide Monte Carlo Tree Search (MCTS)-based POMDP solvers over a time horizon, significantly reducing inference time while ensuring robust performance. Such macro-actions are learnt via Inductive Logic Programming (ILP) from a few traces of execution (belief-action pairs), thus eliminating the need for manually designed heuristics and requiring only the specification of the POMDP transition model. In the Pocman and Rocksample benchmark scenarios, our learned macro-actions demonstrate increased expressiveness and generality when compared to time-independent heuristics, indeed offering substantial computational efficiency improvements.}
+}
+
+@InProceedings{haskins23,
+	title = {KEA Explain: Explanations of Hallucinations using Graph Kernel Analysis},
+	section = {Poster},
+	software = {https://github.com/Reih02/hallucination_explanation_graph_kernel_analysis},
+	author = {Haskins, Reilly and Adams, Benjamin},
+	pages = {1041-1058},
+	openreview = {sQlQ0mHZ3G},
+	abstract = {Large Language Models (LLMs) frequently generate hallucinations: statements that are syntactically plausible but lack factual grounding. This research presents KEA (Kernel-Enriched AI) Explain: a neurosymbolic framework that detects and explains such hallucinations by comparing knowledge graphs constructed from LLM outputs with ground truth data from Wikidata or contextual documents. Using graph kernels and semantic clustering, the method provides explanations for detected hallucinations, ensuring both robustness and interpretability. Our framework achieves competitive accuracy in detecting hallucinations across both open- and closed-domain tasks, and is able to generate contrastive explanations, enhancing transparency. This research advances the reliability of LLMs in high-stakes domains and provides a foundation for future work on precision improvements and multi-source knowledge integration.}
+}
+
+@InProceedings{nezhad23,
+	title = {Enhancing Large Language Models with Neurosymbolic Reasoning for Multilingual Tasks},
+	section = {Poster},
+	author = {Nezhad, Sina Bagheri and Agrawal, Ameeta},
+	pages = {1059-1076},
+	openreview = {T8XSti6sRj},
+	abstract = {Large language models (LLMs) often struggle to perform multi-target reasoning in long-context scenarios where relevant information is scattered across extensive documents. To address this challenge, we introduce {NeuroSymbolic Augmented Reasoning (NSAR)}, which combines the benefits of neural and symbolic reasoning during inference. NSAR explicitly extracts symbolic facts from text and generates executable Python code to handle complex reasoning steps. Through extensive experiments across seven languages and diverse context lengths, we demonstrate that NSAR significantly outperforms both a vanilla RAG baseline and advanced prompting strategies in accurately identifying and synthesizing multiple pieces of information. Our results highlight the effectiveness of combining explicit symbolic operations with neural inference for robust, interpretable, and scalable reasoning in multilingual settings.}
+}
+
+@InProceedings{jacob23,
+	title = {Object-Centric Neuro-Argumentative Learning},
+	section = {Poster},
+	author = {Jacob, Abdul Rahman and Kori, Avinash and Angelis, Emanuele De and Glocker, Ben and Proietti, Maurizio and Toni, Francesca},
+	pages = {1077-1089},
+	openreview = {dBB58hqTXG},
+	abstract = {Over the last decade, as we rely more on deep learning technologies to make critical decisions, concerns regarding their safety, reliability and interpretability have emerged.
+We introduce a novel Neural Argumentative Learning (NAL) architecture that integrates Assumption-Based Argumentation (ABA) with deep learning for image analysis. 
+Our architecture consists of neural and symbolic components. The former segments and encodes images into facts using object-centric learning, while the latter applies ABA learning to develop ABA frameworks enabling predictions with images. 
+Experiments on synthetic data show that the NAL architecture can be competitive with a state-of-the-art alternative.}
+}
+
+@InProceedings{gould23,
+	title = {Neuro-Argumentative Learning with Case-Based Reasoning},
+	section = {Poster},
+	software = {https://github.com/TheAdamG/Gradual-AACBR},
+	author = {Gould, Adam and Toni, Francesca},
+	pages = {1090-1106},
+	openreview = {tke5yswemI},
+	abstract = {We introduce Gradual Abstract Argumentation for Case-Based Reasoning (Gradual AA-CBR), a data-driven, neurosymbolic classification model in which the outcome is determined by an argumentation debate structure that is learned simultaneously with neural-based feature extractors. Each argument in the debate is an observed case from the training data, favouring their labelling. Cases attack or support those with opposing or agreeing labellings, with the strength of each argument and relationship learned through gradient-based methods. This argumentation debate structure provides human-aligned reasoning, improving model interpretability compared to traditional neural networks (NNs). Unlike the existing purely symbolic variant, Abstract Argumentation for Case-Based Reasoning (AA-CBR), Gradual AA-CBR is capable of multi-class classification, automatic learning of feature and data point importance, assigning uncertainty values to outcomes, using all available data points, and does not require binary features. We show that Gradual AA-CBR performs comparably to NNs whilst significantly outperforming existing AA-CBR formulations.}
+}
+
+@InProceedings{liu23b,
+	title = {Linearithmic Clean-up for Vector-Symbolic Key-Value Memory with Kroneker Rotation Products},
+	section = {Poster},
+	author = {Liu, Ruipeng and Qiu, Qinru and Khan, Simon and Katz, Garrett Ethan},
+	pages = {1107-1118},
+	openreview = {MxZZKQfjg5},
+	abstract = {A computational bottleneck in current Vector-Symbolic Architectures (VSAs) is the "clean-up" step, which decodes the noisy vectors retrieved from the architecture.  Clean-up typically compares noisy vectors against a "codebook" of prototype vectors, incurring computational complexity that is quadratic or similar.  We present a new codebook representation that supports efficient clean-up, based on Kroneker products of rotation-like matrices.  The resulting clean-up time complexity is linearithmic, i.e. $\mathcal{O}(N\text{log}N)$, where $N$ is the vector dimension and also the number of vectors in the codebook.  Clean-up space complexity  is $\mathcal{O}(N)$.  Furthermore, the codebook is not stored explicitly in computer memory: It can be represented in $\mathcal{O}(\text{log}N)$ space, and individual vectors in the codebook can be materialized in $\mathcal{O}(N)$ time.  At the same time, asymptotic memory capacity remains comparable to standard approaches. Computer experiments confirm these results, demonstrating several orders of magnitude more scalability than baseline VSA techniques.}
+}
+
+@InProceedings{bougzime23,
+	title = {Evaluating Neuro-Symbolic AI Architectures: Design Principles, Qualitative Benchmark, Comparative Analysis and Results},
+	section = {Poster},
+	author = {BOUGZIME, Oualid and JABBAR, Samir and Cruz, Christophe and DEMOLY, Frédéric},
+	pages = {1119-1143},
+	openreview = {yCwcRijfXz},
+	abstract = {Neuro-symbolic artificial intelligence (NSAI) represents a transformative approach in artificial intelligence (AI) by combining deep learning's ability to handle large-scale and unstructured data with the structured reasoning of symbolic methods. By leveraging their complementary strengths, NSAI enhances generalization, reasoning, and scalability while addressing key challenges such as transparency and data efficiency. This paper systematically studies diverse NSAI architectures, highlighting their unique approaches to integrating neural and symbolic components. This study then evaluates these architectures against comprehensive set of criteria, including generalization, reasoning capabilities, transferability, and interpretability, therefore providing a comparative analysis of their respective  strengths and limitations. Notably, the Neuro → Symbolic ← Neuro model consistenty outperforms its counterparts across all evaluation metrics. This result aligns with state-of-the-art research that highlight the efficacy of such architectures in harnessing advanced technologies like multi-agent systems. Moreover, our NSAI framework using retrieval-augmented illustrates how the 4D printing ontology can be systematically enriched with additional classes, object properties, data properties and individuals.}
+}
+
