@@ -2,6 +2,15 @@
 
 This repository serves as a template for preparing the proceedings for PMLR
 
+# IMPORTANT FOR NeSy 26:
+Dear person handling the NeSy 26 proceedings, here is some feedback from the editor from NeSy 25:
+
+> There were a few problems with the submission including unicode, use of capital letters for names and use of section in the bib when there is only one section in the submission. Please make sure any scripts or forms you are using are updated to ensure future submissions don't have these issues again.
+
+**Please take note to adapt the scripts here**
+
+
+
 ## Instructions for Proceedings Preparation
 
 ### Required Files
